@@ -30,8 +30,13 @@ const createSamples = () => {
 
 createSamples()
 
-
-//Exercise 7
+const randomColor = () => {
+        let red = Math.floor(Math.random() * 256)
+        let blue = Math.floor(Math.random() * 256)
+        let green = Math.floor(Math.random() * 256)
+        return `rgb(${red},${green},${blue})`
+    }
+    //Exercise 7
 
 const h1change = () => {
     let h1 = document.getElementById("title")
@@ -45,19 +50,26 @@ h1change()
 
 const pageBackground = () => {
     let body = document.querySelector("body")
-    body.style.backgroundColor = "#f2f2f2"
+    body.style.backgroundColor = randomColor()
 }
 
-pageBackground()
+
+
+
+const myStopFunction = () => {
+    clearInterval(p);
+}
 
 //Exercise 9
 
 const changeAddress = (params) => {
     let footer = document.querySelector("footer div")
-    footer.getElementsByTagName("p")[1].innerHTML = "Sorry, I'm a fake address"
+    if (footer.getElementsByTagName("p")[1].innerHTML == "Frankfurter Strasse 13, 12047 Berlin") {
+        footer.getElementsByTagName("p")[1].innerHTML = "Sorry, I'm a fake address"
+    } else {
+        footer.getElementsByTagName("p")[1].innerHTML = "Frankfurter Strasse 13, 12047 Berlin"
+    }
 }
-
-changeAddress()
 
 //Exercise 10
 
@@ -80,24 +92,28 @@ const addClassForImages = () => {
     for (const item of images) {
         item.classList.toggle("img-class")
     }
-    let imgClass = document.getElementsByClassName("img-class")
 
-    for (const item of imgClass) {
-        item.style.visibility = "visible"
-    }
 }
 addClassForImages()
+
+const visibilityImgs = () => {
+    let imgClass = document.getElementsByClassName("img-class")
+    for (const item of imgClass) {
+        if (item.style.visibility === "visible" || item.style.visibility === "") {
+            item.style.visibility = "hidden"
+        } else {
+            item.style.visibility = "visible"
+        }
+
+    }
+}
+
 
 //Exercise 12
 /* EX12: Write a function to color the price of each product in a different one
     every time it's invoked */
 
-const randomColor = () => {
-    let red = Math.floor(Math.random() * 256)
-    let blue = Math.floor(Math.random() * 256)
-    let green = Math.floor(Math.random() * 256)
-    return `rgb(${red},${green},${blue})`
-}
+
 
 const changeColorofPrice = () => {
     let tableRows = document.getElementsByTagName("tr")
@@ -106,4 +122,31 @@ const changeColorofPrice = () => {
     }
 }
 
-changeColorofPrice()
+
+
+//Testing
+// appendChild
+const createNode = (params) => {
+    let node = document.createElement("p")
+    let textnode = document.createTextNode("I'm a new node of div{1}")
+    node.appendChild(textnode)
+    document.getElementsByTagName("div")[1].appendChild(node)
+}
+
+createNode()
+
+//children
+// console.log('document.getElementsByTagName("div")[1].children:', document.getElementsByTagName("div")[1].children)
+
+
+// toggle class
+for (const item of document.querySelectorAll("p")) {
+    item.classList.toggle("p-class")
+}
+
+//parentNode
+console.log('document.getElementById("address").parentNode():', document.getElementById("address").parentNode)
+    //document.getElementsByTagName("div")[1].children
+
+
+document

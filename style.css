@@ -1,0 +1,17 @@
+td {
+    word-wrap: normal;
+    text-align: center;
+}
+
+a:hover {
+    color: red;
+}
+
+p:hover {
+    color: rosybrown;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}

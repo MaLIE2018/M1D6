@@ -3,24 +3,34 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta content="text/html; X-Content-Type-Options=nosniff">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smartphone Shop</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="#">
 
 </head>
 
 <body>
     <h1 id="title">Welcome to the Smartphone Shop</h1>
     <div>
+        <button onclick="pageBackground()">Strange enough that you can change the page background.</button>
+        <button onclick="changeColorofPrice()">Why should I be able to change the price color</button>
+        <button onclick="visibilityImgs()" style="display:block">Image on/off</button>
+    </div>
+    <div>
         <table id="products">
         </table>
+
     </div>
 
     <footer>
         <div>
             <p>Smartphone Shop</p>
-            <p>Frankfurter Strasse 13, 12047 Berlin</p>
+            <p id="address">Frankfurter Strasse 13, 12047 Berlin</p>
+            <button onclick="changeAddress()">Change Address</button>
+
         </div>
         <h3>Contact form</h3>
         <label for="message">Write your question</label><br>
@@ -29,6 +39,7 @@
     </footer>
 
     <script src="index.js"></script>
+
 </body>
 
 </html>
