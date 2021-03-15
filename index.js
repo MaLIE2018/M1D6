@@ -1,4 +1,7 @@
 //object
+
+let interval = null
+
 const product = {
     name: "A",
     image: "https://picsum.photos/5",
@@ -53,11 +56,12 @@ const pageBackground = () => {
     body.style.backgroundColor = randomColor()
 }
 
+const partyMode = () => {
+    interval = setInterval(() => pageBackground(), 50)
+}
 
-
-
-const myStopFunction = () => {
-    clearInterval(p);
+const stopIt = () => {
+    clearInterval(interval);
 }
 
 //Exercise 9
@@ -149,4 +153,4 @@ console.log('document.getElementById("address").parentNode():', document.getElem
     //document.getElementsByTagName("div")[1].children
 
 
-document
+navigator.mediaDevices()
