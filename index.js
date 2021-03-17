@@ -1,5 +1,6 @@
 //object
 
+//global interval variable
 let interval = null
 
 const product = {
@@ -127,7 +128,6 @@ const changeColorofPrice = () => {
 }
 
 
-
 //Testing
 // appendChild
 const createNode = (params) => {
@@ -150,7 +150,5 @@ for (const item of document.querySelectorAll("p")) {
 
 //parentNode
 console.log('document.getElementById("address").parentNode():', document.getElementById("address").parentNode)
-    //document.getElementsByTagName("div")[1].children
 
-
-navigator.mediaDevices()
+//document.getElementsByTagName("div")[1].children
